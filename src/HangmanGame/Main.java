@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HangmanGame hangmanGame = new HangmanGame();
-        System.out.println("Добро пожаловать в игру 'Виселица'!");
+        System.out.println("Добро пожаловать в игру 'Виселица'!");//Приветствие
 
         while (true) {
             System.out.println("Нажмите 1, чтобы начать игру.");
