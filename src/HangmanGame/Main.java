@@ -9,7 +9,7 @@ public class Main {
         while (true) {
             System.out.println("Нажмите 1, чтобы начать игру.");
             System.out.println("Нажмите 2, чтобы выйти.");
-            String choice = scanner.nextLine();
+            String choice = scanner.nextLine(); //ля-ля
             if (choice.equals("1")) {
                 while (true) {
                     HangmanGame hangmanGame = new HangmanGame();
