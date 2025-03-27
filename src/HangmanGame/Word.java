@@ -7,14 +7,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Word {
-
     private List<String> words;
 
     public Word() {
-        this.words = loadWordsFromFile("Word.txt");
+        this.words = loadWordsFromFile();
     }
 
-    private List<String> loadWordsFromFile(String fileName) {
+    private List<String> loadWordsFromFile() {
         List<String> list = new ArrayList<>();
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("HangmanGame/Word.txt").getFile());
@@ -30,7 +29,6 @@ public class Word {
             System.out.println("Файл не найден: " + e.getMessage());
             throw new RuntimeException(e);
         }
-
         return list;
     }
 

@@ -6,7 +6,6 @@ import java.util.Set;
 
 public class HangmanGame {
     private Word word;
-    private Set<Character> letterChar;
     private Set<Character> oldChar;
     private String sourceWord;
     private int maxAttempts;
@@ -16,7 +15,6 @@ public class HangmanGame {
 
     public HangmanGame() {
         this.word = new Word();
-        this.letterChar = new HashSet<>();
         this.oldChar = new HashSet<>();
         this.maxAttempts = 6;
         this.attemptsLeft = maxAttempts;
@@ -25,7 +23,7 @@ public class HangmanGame {
     }
 
     public void play() {
-        resetGame();
+
         sourceWord = word.getRandomWord();
         System.out.println("Загаданное слово: " + sourceWord);
 
@@ -57,7 +55,6 @@ public class HangmanGame {
             oldChar.add(guessedLetter);
 
             if (sourceWord.indexOf(guessedLetter) >= 0) {
-                letterChar.add(guessedLetter);
                 System.out.println("Правильно!");
             } else {
                 attemptsLeft--;
@@ -92,9 +89,4 @@ public class HangmanGame {
         return response.equals("1");
     }
 
-    public void resetGame() {
-        letterChar.clear();
-        oldChar.clear();
-        attemptsLeft = maxAttempts;
-    }
 }
